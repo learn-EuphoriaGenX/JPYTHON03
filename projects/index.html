@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Responsive Navbar</title>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAVBAR -->
+    <nav class="flex items-center justify-between px-6 py-4 bg-gray-300 relative z-20">
+
+        <!-- LOGO -->
+        <h1 class="text-2xl font-bold">LOGO</h1>
+
+        <!-- Toggle Button (Mobile Only) -->
+        <img id="toggle-btn" class="w-8 sm:hidden cursor-pointer z-10 " src="menu.png" alt="menu icon" />
+
+        <!-- Desktop Menu -->
+        <div class="hidden sm:flex gap-10 font-semibold text-lg">
+            <a href="#" class="hover:text-blue-600 transition">Home</a>
+            <a href="#" class="hover:text-blue-600 transition">About</a>
+            <a href="#" class="hover:text-blue-600 transition">Services</a>
+            <a href="#" class="hover:text-blue-600 transition">Contact</a>
+            <a href="#" class="hover:text-blue-600 transition">Login</a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="menu" class="absolute sm:hidden top-16 right-0 w-64 bg-white shadow-xl rounded-xl
+             transform -translate-y-full opacity-0
+             transition-all duration-500 ease-in-out">
+
+            <div class="flex flex-col text-center gap-3 py-4 font-semibold">
+
+                <a href="#" class="hover:bg-gray-200 p-4 rounded-lg transition hover:text-blue-500">Home</a>
+                <a href="#" class="hover:bg-gray-200 p-4 rounded-lg transition">About</a>
+                <a href="#" class="hover:bg-gray-200 p-4 rounded-lg transition">Services</a>
+                <a href="#" class="hover:bg-gray-200 p-4 rounded-lg transition">Contact</a>
+
+                <!-- Login Button -->
+                <a href="#" class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition">
+                    Login
+                </a>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let btn = document.getElementById("toggle-btn");
+        let menu = document.getElementById("menu");
+
+        let isOpen = false;
+
+
+        let toogleMenu = () => {
+
+            if (!isOpen) {
+                // OPEN MENU
+                btn.src = "close.png";
+
+                menu.classList.remove("-translate-y-full", "opacity-0");
+                menu.classList.add("translate-y-0", "opacity-100");
+
+                isOpen = true;
+
+            } else {
+                // CLOSE MENU
+                btn.src = "menu.png";
+
+                menu.classList.remove("translate-y-0", "opacity-100");
+                menu.classList.add("-translate-y-full", "opacity-0");
+
+                isOpen = false;
+            }
+        }
+
+        /* btn.addEventListener("click", toogleMenu); */
+
+
+        window.addEventListener('keydown', (e) => {
+            console.log(e)
+            if (e.key == 'Enter') {
+                btn.src = "close.png";
+
+                menu.classList.remove("-translate-y-full", "opacity-0");
+                menu.classList.add("translate-y-0", "opacity-100");
+                
+                isOpen = true;
+            }
+            if (e.key == 'Escape') {
+                btn.src = "menu.png";
+
+                menu.classList.remove("translate-y-0", "opacity-100");
+                menu.classList.add("-translate-y-full", "opacity-0");
+
+                isOpen = false;
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>DOM Manupulation</title>
+</head>
+
+<body>
+    <p id="para1" class="bg-red-300">This is para 1</p>
+    <p id="para2" class="bg-green-300">This is para 2</p>
+
+    <button id="btn" class="bg-blue-100 p-2 rounded-xl">Swap</button>
+
+
+
+    <div class="flex justify-center items-center min-h-screen ">
+
+        <!-- Outer Container -->
+        <div class="border-4 border-green-600 rounded-[60px] p-10 w-[900px]">
+
+            <!-- Screen Box -->
+            <div id="screen" class="border-4 border-green-600 rounded-[50px] h-[250px] mb-10"></div>
+
+            <div id="buttons" class="">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        let arr = ['bg-yellow-50', 'bg-red-100', 'bg-green-200', 'bg-red-300', 'bg-blue-400', 'bg-red-500', 'bg-red-600', 'bg-grey-700', 'bg-red-800', 'bg-green-900']
+        let buttonCont = document.getElementById('buttons')
+
+        function renderButtons() {
+            arr.map((item) => {
+                buttonCont.innerHTML += `<button onClick="handleChangeBG('${item}')" class="w-[80px] ${item} h-[170px] border-2 border-green-600 rounded-[25px]"></button>`
+            })
+        }
+
+        renderButtons()
+
+
+        function handleChangeBG(bgColor) {
+            let screen = document.getElementById("screen");
+
+            let lastClass = screen.classList[screen.classList.length - 1];
+
+            screen.classList.remove(lastClass)
+            screen.classList.add(bgColor)
+        }
+
+
+    </script>
+</body>
+
+</html>
