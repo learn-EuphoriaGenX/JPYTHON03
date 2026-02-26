@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Resume Forge AI</title>
+    <link rel="icon" type="image/png" href="assets/icon (2).png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="js/main.js"></script>
@@ -11,31 +12,30 @@
 
 <body class="bg-gray-50 font-sans">
 
-    <div id="render-nav">
-
-    </div>
+    <div id="render-nav"></div>
 
 
     <!-- HERO SECTION -->
     <section class="flex flex-col items-center justify-center text-center px-6 py-24">
 
-        <h2 class="text-5xl font-extrabold text-gray-900 leading-tight max-w-3xl">
-            Build Professional Resumes <br> with AI in Minutes
+        <h2 class="text-5xl font-bold text-gray-800 leading-tight max-w-3xl">
+            Build Professional Resumes <br> in Minutes
         </h2>
 
-        <p class="mt-6 text-lg text-gray-600 max-w-2xl">
+        <p class="mt-6 text-lg text-gray-600 text-semibold">
             Create job-winning resumes effortlessly using AI-powered templates.
             Customize, download, and get hired faster.
         </p>
 
         <div class="mt-8 flex space-x-4">
-            <button class="px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
-                Create Resume
-            </button>
+            
+            <a href="createCV.html"><button class="px-8 py-3 font-semibold bg-gray-400 border border-black rounded-full hover:bg-slate-700 hover:text-white transition">
+               ➕ Create Resume
+            </button></a> 
 
-            <button class="px-8 py-3 border border-black rounded-full hover:bg-black hover:text-white transition">
+            <a href="./templates.html"><button class="px-8 py-3 font-semibold bg-gray-400 border border-black rounded-full hover:bg-slate-700 hover:text-white transition">
                 View Templates
-            </button>
+            </button></a>
         </div>
 
     </section>
@@ -60,6 +60,10 @@
         </div>
 
     </section>
+        <!-- FOOTER -->
+    <footer>
+            <div id="render-foot"></div>
+    </footer>
 
 </body>
 
