@@ -6,10 +6,11 @@ export function navbar() {
                 <img class="w-40" src="./assets/logo.png" alt="Logo">
             </a>
 
-            <div class="hidden md:flex items-center space-x-8 font-medium text-gray-600">
-                <a href="#" class="hover:text-black transition">Dashboard</a>
-                <a href="#" class="hover:text-black transition">Templates</a>
-                <a href="#" class="hover:text-black transition">Pricing</a>
+            <div class="hidden md:flex items-center space-x-8 font-[30px] font-semibold text-gray-600">
+
+            <a href="./index.html" class="hover:text-black transition">Home</a>
+            <a href="./Recentworks.html" class="hover:text-black transition">Recents</a>
+                <a href="./premium.html" class="hover:text-black transition">Premium👑</a>
             </div>
 
             <div class="flex items-center space-x-4">
