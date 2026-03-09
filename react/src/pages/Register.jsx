@@ -1,9 +1,21 @@
-import React from 'react'
-import Button from '../components/ui/Button'
+import React, { useState } from 'react'
 import Input from '../components/ui/Input'
+import Button from '../components/ui/Button'
 import { Link } from 'react-router-dom'
 
-function Login() {
+function Register() {
+
+    let [username, setUsername] = useState("") // hook - function
+    let [email, setEmail] = useState("")
+    let [password, setPassword] = useState("")
+
+    let onHandleSubmit = () => {
+        console.log({
+            username,
+            email,
+            password
+        });
+    }
 
 
     return (
@@ -11,11 +23,11 @@ function Login() {
             <div class="bg-card border border-card-line rounded-xl shadow-2xl">
                 <div class="p-4 sm:p-7">
                     <div class="text-center">
-                        <h3 id="hs-modal-signin-label" class="block text-2xl font-bold text-foreground">Sign in</h3>
+                        <h3 id="hs-modal-signin-label" class="block text-2xl font-bold text-foreground">Sign up</h3>
                         <p class="mt-2 text-sm text-muted-foreground-2">
-                            Don't have an account yet?
-                            <Link class="text-primary decoration-2 hover:underline focus:outline-hidden focus:underline font-medium" to="/register">
-                                Sign up here
+                            Already have an account?
+                            <Link to="/login" class="text-primary decoration-2 hover:underline focus:outline-hidden focus:underline font-medium" href="#">
+                                Sign in here
                             </Link>
                         </p>
                     </div>
@@ -36,21 +48,12 @@ function Login() {
                         <form>
                             <div class="grid gap-y-4">
 
-                                <Input label={"Email Address"} type={"email"} name={"email"} placeholder={"johndoe@gmail.com"} />
-                                <Input label={"Password"} type={"password"} name={"password"} placeholder={"your password"} />
+                                <Input onChange={(event) => setUsername(event.target.value)} label={"User Name"} type={"text"} name={"name"} placeholder={"John Doe"} />
+                                <Input onChange={(e) => setEmail(e.target.value)} label={"Email Address"} type={"email"} name={"email"} placeholder={"johndoe@gmail.com"} />
+                                <Input onChange={(ev) => setPassword(ev.target.value)} label={"Password"} type={"password"} name={"password"} placeholder={"your password"} />
 
-                                <div class="flex items-center">
-                                    <div class="flex">
-                                        <input id="checkbox" name="checkbox" type="checkbox" class="shrink-0 size-4 bg-transparent border-line-3 rounded-sm shadow-2xs text-primary focus:ring-0 focus:ring-offset-0 checked:bg-primary-checked checked:border-primary-checked disabled:opacity-50 disabled:pointer-events-none" />
-                                    </div>
-                                    <div class="ms-3">
-                                        <label for="checkbox" class="text-sm text-foreground">
-                                            Remember me
-                                        </label>
-                                    </div>
-                                </div>
 
-                                <Button title={"Sign in"} />
+                                <Button title={"Sign up"} onClick={onHandleSubmit} />
                             </div>
                         </form>
                     </div>
@@ -60,4 +63,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Register

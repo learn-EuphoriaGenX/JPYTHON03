@@ -1,9 +1,10 @@
 import React from "react";
 
-function Button({ title, icon }) {
+function Button({ title, icon, onClick }) {
   return (
     <button
       type="button"
+      onClick={onClick}
       className="flex items-center justify-center gap-2 px-5 py-2 rounded-xl 
       bg-blue-600 text-white font-medium
       hover:bg-blue-700 active:scale-95
